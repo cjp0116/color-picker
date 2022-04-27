@@ -1,16 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Colorbox from './Colorbox';
 import "./Palette.css";
 
-const Palette = (props) => {
-  console.log(props);
+import Slider from 'rc-slider';
+import 'rc-slider/assets/index.css';
 
+const Palette = ({ palette: { colors } }) => {
+  const [level, setLevel] = useState(500)
+  const changeLevel = (level) => { setLevel(level) }
   return (
     <div className="Palette">
+      <Slider step={100} defaultValue={level} min={100} max={900} onAfterChange={changeLevel} />
       {/* Navbar Goes here */}
       <div className="Palette-colors">
-        {props.palette.colors.map(color => (
-          <Colorbox background={color.color} name={color.name} />
+        {colors[level].map(({ hex, name }) => (
+          <Colorbox background={hex} name={name} />
         ))}
       </div>
     </div>
