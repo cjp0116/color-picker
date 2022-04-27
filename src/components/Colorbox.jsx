@@ -15,10 +15,10 @@ const Colorbox = ({ name, background }) => {
     <CopyToClipboard text={background} onCopy={changeCopyState}>
       <div className="ColorBox" style={{ background }}>
         <div
-          className={`copy-overlay ${copied ? "show" : ""}`}
+          className={`copy-overlay ${copied && 'show'}`}
           style={{ background }}
         />
-        <div className={`copy-msg ${copied ? "show" : ""}`} >
+        <div className={`copy-msg ${copied && 'show'}`} >
           <h1>Copied</h1>
           <p>{background}</p>
         </div>

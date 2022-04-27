@@ -26,6 +26,7 @@
 // },
 import chroma from 'chroma-js';
 const levels = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
+
 const generatePallete = (starterPallette) => { 
   let newPallette = {
     name: starterPallette.name,
@@ -37,7 +38,12 @@ const generatePallete = (starterPallette) => {
   for (let level of levels) {
     newPallette.colors[level] = []
   }
-  for (let color of newPallette.colors) {
+  for (let color of starterPallette.colors) {
     
   }
+}
+
+
+function generateScale(hexColor, numberOfColors) {
+  
 }
