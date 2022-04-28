@@ -4,9 +4,9 @@ import Navbar from './Navbar';
 
 import "./Palette.css";
 
-const Palette = ({ palette: { colors } }) => {
+const Palette = ({ palette: { colors, id, emoji } }) => {
   const [level, setLevel] = useState(500);
-  const [format, setFormat] = useSate('hex');
+  const [format, setFormat] = useState('hex');
 
   const changeLevel = (level) => { setLevel(level) };
   const changeFormat = (value) => {
@@ -15,12 +15,15 @@ const Palette = ({ palette: { colors } }) => {
   return (
     <div className="Palette">
       <Navbar level={level} changeLevel={changeLevel} changeFormat={changeFormat} />
-      {/* Navbar Goes here */}
       <div className="Palette-colors">
         {colors[level].map(color => (
-          <Colorbox background={color[format]} name={color.name} />
+          <Colorbox background={color[format]} name={color.name} key={color.id} />
         ))}
       </div>
+      <footer className="Palette-footer">
+        {id}
+        <span className="emoji">{emoji}</span>
+      </footer>
     </div>
   )
 }
