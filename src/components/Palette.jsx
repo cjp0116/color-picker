@@ -1,12 +1,19 @@
 import React, { useState } from 'react'
+import { useParams } from 'react-router-dom';
 import Colorbox from './Colorbox';
 import Navbar from './Navbar';
-
+import seedColors from '../seedColors';
+import { generatePallete } from '../colorHelpers';
 import "./Palette.css";
 
-const Palette = ({ palette: { colors, id, emoji } }) => {
+const Palette = () => {
+  const { id } = useParams();
+  const findPallete = id => seedColors.find(palette => palette.id === id);
+  const palette = generatePallete(findPallete(id));
+  const { colors, emoji } = palette;
   const [level, setLevel] = useState(500);
   const [format, setFormat] = useState('hex');
+
 
   const changeLevel = (level) => { setLevel(level) };
   const changeFormat = (value) => {
