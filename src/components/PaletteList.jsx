@@ -1,10 +1,17 @@
 import React from 'react'
 import MiniPalette from './MiniPalette';
+import { withStyles } from '@material-ui/styles';
 import { Link } from 'react-router-dom';
 
-const PaletteList = ({ palettes }) => {
+const styles = {
+  root: {
+    backgroundColor : 'blue',
+  }
+}
+
+const PaletteList = ({ palettes, classes }) => {
   return (
-    <div>
+    <div className={classes.root}>
       <MiniPalette />
       <h1>React Colors</h1>
       {palettes.map(palette => (
@@ -14,4 +21,4 @@ const PaletteList = ({ palettes }) => {
   )
 }
 
-export default PaletteList
+export default withStyles(styles)(PaletteList);
