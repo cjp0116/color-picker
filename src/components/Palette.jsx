@@ -26,7 +26,7 @@ const Palette = () => {
         level={level}
         changeLevel={changeLevel}
         changeFormat={changeFormat}
-      />
+      />a
       <div className="Palette-colors">
         {colors[level].map((color) => (
           <Colorbox
