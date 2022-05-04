@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import Colorbox from "./Colorbox";
 import Navbar from "./Navbar";
+import uuid from "react-uuid";
 import seedColors from "../seedColors";
 import { generatePallete } from "../colorHelpers";
 import "./Palette.css";
@@ -32,7 +33,9 @@ const Palette = () => {
           <Colorbox
             background={color[format]}
             name={color.name}
-            key={color.id}
+            key={uuid()}
+            paletteId={color.id}
+            id={id}
           />
         ))}
       </div>
