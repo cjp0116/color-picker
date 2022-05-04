@@ -8,7 +8,6 @@ const styles = {
     backgroundColor: "blue",
     height: "100vh",
     display: "flex",
-    // flexDirection: "column",
     justifyContent: "center",
   },
   container: {
@@ -17,7 +16,6 @@ const styles = {
     alignItems: "flex-start",
     flexDirection: "column",
     flexWrap: "wrap",
-    // border: '1px solid white'
   },
   nav: {
     display: "flex",
