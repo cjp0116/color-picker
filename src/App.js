@@ -5,6 +5,8 @@ import SingleColorPalette from './components/SingleColorPalette';
 import { Routes, Route } from 'react-router-dom';
 
 function App() {
+  const findPalette = id => seedColors.find(palette => palette.id === id);
+
   return (
     <Routes>
       <Route exact path="/" element={<PaletteList palettes={seedColors} />} />
