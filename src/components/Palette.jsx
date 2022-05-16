@@ -5,6 +5,7 @@ import Navbar from "./Navbar";
 import uuid from "react-uuid";
 import seedColors from "../seedColors";
 import { generatePallete } from "../colorHelpers";
+import Footer from "./Footer";
 import "./Palette.css";
 
 const Palette = () => {
@@ -27,6 +28,7 @@ const Palette = () => {
         level={level}
         changeLevel={changeLevel}
         changeFormat={changeFormat}
+        showingAllColors
       />
       <div className="Palette-colors">
         {colors[level].map((color) => (
@@ -39,10 +41,7 @@ const Palette = () => {
           />
         ))}
       </div>
-      <footer className="Palette-footer">
-        {id}
-        <span className="emoji">{emoji}</span>
-      </footer>
+      <Footer emoji={emoji} id={id} />
     </div>
   );
 };
