@@ -9,9 +9,21 @@ function App() {
 
   return (
     <Routes>
-      <Route exact path="/" element={<PaletteList palettes={seedColors} />} />
-      <Route exact path="/palette/:id" element={<Palette />} />
-      <Route exact path='/palette/:paletteId/:colorId' element={<SingleColorPalette />} />
+      <Route
+        exact
+        path="/"
+        element={<PaletteList palettes={seedColors} />}
+      />
+      <Route
+        exact
+        path="/palette/:id"
+        element={<Palette />}
+      />
+      <Route
+        exact
+        path='/palette/:paletteId/:colorId'
+        element={<SingleColorPalette />}
+      />
     </Routes>
   );
 }
